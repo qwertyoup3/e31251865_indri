@@ -1,0 +1,117 @@
+<?php
+$file = '../data.json';
+$message = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nama    = $_POST['nama'];
+    $telepon = $_POST['telepon'];
+    $kota    = $_POST['kota'];
+    $jadwal  = $_POST['jadwal'] ?? '';
+
+    // Baca data yang sudah ada
+    $data = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
+    
+    // Tambahkan data baru
+    $data[] = [
+        "nama" => $nama,
+        "telepon" => $telepon,
+        "kota" => $kota,
+        "jadwal" => $jadwal
+    ];
+
+    // Simpan ke file JSON
+    file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    
+    // Set pesan sukses
+    $message = "Data reservasi berhasil disimpan!";
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservasi Baru | Aruma SPA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                
+                <?php if ($message): ?>
+                    <div class="alert alert-success border-0 shadow-sm mb-4 animate__animated animate__fadeIn">
+                        <i class="bi bi-check-circle-fill me-2"></i> <?= $message ?>
+                        <a href="data.php" class="alert-link ms-2 text-decoration-none">Lihat Daftar Pelanggan &rarr;</a>
+                    </div>
+                <?php endif; ?>
+
+                <div class="card overflow-hidden border-0 shadow-lg">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-none d-md-flex bg-primary flex-column justify-content-center text-center p-4 text-white" style="background: linear-gradient(135deg, #ffc5d9 0%, #ff83b4 100%) !important;">
+                            <i class="bi bi-flower1 display-1 mb-3"></i>
+                            <h2 class="h4">Reservasi Baru</h2>
+                            <p class="small opacity-75">Mari berikan pengalaman relaksasi terbaik untuk pelanggan baru Aruma SPA.</p>
+                        </div>
+                        
+                        <div class="col-md-8 bg-white p-4 p-md-5">
+                            <div class="mb-4 text-center text-md-start">
+                                <h2 class="card-title text-start mb-1">Formulir Input</h2>
+                                <p class="text-muted small">Lengkapi detail pelanggan di bawah ini</p>
+                            </div>
+
+                            <form method="POST">
+                                <div class="row">
+                                    <div class="col-md-12 mb-3">
+                                        <label class="form-label fw-bold small text-uppercase">Nama Pelanggan</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-light border-0"><i class="bi bi-person text-muted"></i></span>
+                                            <input type="text" class="form-control bg-light border-0" name="nama" placeholder="Contoh: Indri" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold small text-uppercase">Nomor Telepon</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-light border-0"><i class="bi bi-phone text-muted"></i></span>
+                                            <input type="text" class="form-control bg-light border-0" name="telepon" placeholder="0822..." required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold small text-uppercase">Kota Asal</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-light border-0"><i class="bi bi-geo-alt text-muted"></i></span>
+                                            <input type="text" class="form-control bg-light border-0" name="kota" placeholder="Contoh: TA" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mb-4">
+                                        <label class="form-label fw-bold small text-uppercase">Jadwal Reservasi</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-light border-0"><i class="bi bi-calendar3 text-muted"></i></span>
+                                            <input type="datetime-local" class="form-control bg-light border-0" name="jadwal" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary shadow-sm">Simpan Reservasi</button>
+                                    <div class="d-flex gap-2">
+                                        <a href="data.php" class="btn btn-outline-secondary w-100 border-0">Lihat Data</a>
+                                        <a href="homepage.php" class="btn btn-outline-secondary w-100 border-0">Beranda</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
