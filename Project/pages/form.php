@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         
                         <div class="col-md-8 bg-white p-4 p-md-5">
                             <div class="mb-4 text-center text-md-start">
-                                <h2 class="card-title text-start mb-1">Formulir Input</h2>
+                                <h2 class="card-title text-start mb-1">Formulir Input</h2><br>
                                 <p class="text-muted small">Lengkapi detail pelanggan di bawah ini</p>
                             </div>
 
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <label class="form-label fw-bold small text-uppercase">Kota Asal</label>
                                         <div class="input-group">
                                             <span class="input-group-text bg-light border-0"><i class="bi bi-geo-alt text-muted"></i></span>
-                                            <input type="text" class="form-control bg-light border-0" name="kota" placeholder="Contoh: TA" required>
+                                            <input type="text" class="form-control bg-light border-0" name="kota" placeholder="Contoh: Bekasi" required>
                                         </div>
                                     </div>
 
@@ -111,6 +111,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
             </div>
+            <div class="text-center mt-4">
+                    <p class="text-muted small">E31251865_Indri Wahyu Setyaningrum</p>
+             </div>
         </div>
     </div>
 </body>

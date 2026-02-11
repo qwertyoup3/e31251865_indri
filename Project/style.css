@@ -96,3 +96,18 @@ h1, h3, .card-title {
     font-size: 0.85rem;
     color: var(--spa-text);
 }
+
+/* Homepage Card Centering */
+.vh-100-center {
+    min-height: 100vh; /* Tinggi mengikuti layar penuh */
+    display: flex;
+    align-items: center; /* Tengah vertikal */
+    justify-content: center; /* Tengah horizontal */
+}
+
+.hero-card {
+    padding: 40px;
+    border-radius: 30px !important;
+    max-width: 500px;
+    width: 100%;
+}

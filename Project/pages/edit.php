@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 
                 <div class="text-center mt-4">
-                    <p class="text-muted small">Aruma SPA Management System &copy; 2026</p>
+                    <p class="text-muted small">E31251865_Indri Wahyu Setyaningrum</p>
                 </div>
             </div>
         </div>
