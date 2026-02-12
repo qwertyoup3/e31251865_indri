@@ -111,3 +111,88 @@ h1, h3, .card-title {
     max-width: 500px;
     width: 100%;
 }
+
+/* Pagination Styling */
+.pagination {
+    gap: 0.25rem;
+}
+
+.pagination .page-item .page-link {
+    color: var(--spa-accent) !important;
+    border-color: #ddd !important;
+    background-color: white !important;
+    font-weight: 500;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--spa-accent) !important;
+    border-color: var(--spa-accent) !important;
+    color: white !important;
+}
+
+.pagination .page-item:not(.disabled):not(.active) .page-link:hover {
+    background-color: var(--spa-primary) !important;
+    border-color: var(--spa-accent) !important;
+    color: var(--spa-accent) !important;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #999 !important;
+    background-color: #f9f9f9 !important;
+    border-color: #ddd !important;
+}
+
+/* Breadcrumb Styling */
+.spa-breadcrumb {
+    background-color: var(--spa-primary) !important;
+    border-left: 4px solid var(--spa-accent) !important;
+}
+
+.spa-breadcrumb-item > .spa-breadcrumb-link {
+    color: var(--spa-accent) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.spa-breadcrumb-item > .spa-breadcrumb-link:hover {
+    color: white !important;
+    background-color: var(--spa-accent) !important;
+    padding: 0.25rem 0.75rem !important;
+    border-radius: 8px !important;
+}
+
+.spa-breadcrumb-active {
+    color: var(--spa-text) !important;
+    font-weight: 600 !important;
+}
+
+/* Search Input Styling */
+.spa-search-group {
+    border-bottom: 2px solid var(--spa-accent) !important;
+    background-color: white !important;
+}
+
+.spa-search-icon {
+    background-color: white !important;
+    border: none !important;
+    color: var(--spa-accent) !important;
+    font-weight: 600;
+}
+
+.spa-search-input {
+    background-color: white !important;
+    border: none !important;
+    color: var(--spa-text) !important;
+    font-size: 1rem;
+}
+
+.spa-search-input::placeholder {
+    color: #aaa !important;
+}
+
+.spa-search-input:focus {
+    background-color: white !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--spa-text) !important;
+}

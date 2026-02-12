@@ -38,6 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
 <body class="bg-light">
+    <?php include_once 'nav.php'; ?>
+    <?php include_once 'breadcrumb.php'; ?>
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -100,10 +102,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                                 <div class="d-grid gap-2">
                                     <button type="submit" class="btn btn-primary shadow-sm">Simpan Reservasi</button>
-                                    <div class="d-flex gap-2">
-                                        <a href="data.php" class="btn btn-outline-secondary w-100 border-0">Lihat Data</a>
-                                        <a href="homepage.php" class="btn btn-outline-secondary w-100 border-0">Beranda</a>
-                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -116,5 +114,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
